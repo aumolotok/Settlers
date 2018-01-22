@@ -27,7 +27,7 @@ public class Map : MonoBehaviour {
         circlesOfHexes.Add(startList);
         allHexesPositions.Add(startHex.transform.position);
 
-        SetUpMap(3, startList);		
+        SetUpMap(4, startList);		
 	}
 	
 	void SetUpMap(int circlesNumber, List<GameObject> curcle) {
@@ -41,7 +41,7 @@ public class Map : MonoBehaviour {
             for(float alpha = 0; alpha < 360.0f; alpha += 60.0f) {
                 float alphaRad = alpha * Mathf.Deg2Rad;
                 Vector3 newVector = GetVectorForNewhex(x, z, alphaRad);
-                if (!allHexesPositions.Contains(newVector)) {
+                if (DoesNotThisHexExistApprox(newVector)) {
                     var a = Instantiate(hexPrefab, newVector, Quaternion.identity);
                     newCercle.Add(a);
                     allHexesPositions.Add(a.transform.position);
@@ -58,5 +58,24 @@ public class Map : MonoBehaviour {
     Vector3 GetVectorForNewhex(float x1, float z1, float alphaRad )
     {
         return new Vector3((vectorLength * Mathf.Cos(alphaRad)) + x1 , 0, (vectorLength * Mathf.Sin(alphaRad)) + z1 );
+    }
+
+    bool DoesNotThisHexExistApprox(Vector3 newVector)
+    {
+        bool result = true;
+        foreach(var vectorFromAll in allHexesPositions)
+        {
+            float deltaX = vectorFromAll.x - newVector.x;
+            float deltaZ = vectorFromAll.z - newVector.z;
+            if ( deltaX > 0.01 || deltaX <-0.01 || deltaZ > 0.01 || deltaZ < -0.01)
+            {
+                result &= true;
+            }
+            else
+            {
+                result &= false;
+            }
+        }
+        return result;
     }
 }
