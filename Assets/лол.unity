@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1dcbfa33f69c24d9699d8363a69729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexPrefab: {fileID: 1545094377603562, guid: 5c0f2bf72c1caa84186bbe60dc968fca, type: 2}
+  hexPrefab: {fileID: 1277439973563032, guid: 91ad35b2c5bbd8441ad20a7b8caeb9ae, type: 2}
   height1: 0.8660254
   allHexesPositions: []
 --- !u!4 &1026113888

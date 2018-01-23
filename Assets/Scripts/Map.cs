@@ -7,7 +7,7 @@ public class Map : MonoBehaviour {
     public GameObject hexPrefab;
     // высота равна (стороне * корень из трех)/2
     public float height1 = (1.0f * Mathf.Sqrt(3)/2);
-    float cof = 1.1f;
+    float cof = 2.0f;
     float vectorLength;
 
     public List<List<GameObject>> circlesOfHexes = new List<List<GameObject>>(); // хексы по крушам - каждый список - это круг
