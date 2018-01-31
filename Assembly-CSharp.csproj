@@ -51,7 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BankObj.cs" />
+     <Compile Include="Assets\HexObj.cs" />
      <Compile Include="Assets\Scripts\Map.cs" />
+     <Compile Include="Assets\TownPoint.cs" />
+     <Compile Include="Assets\Village.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
